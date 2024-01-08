@@ -24,7 +24,14 @@ public class InputReader : ScriptableObject, IShipControlsActions
 
     public void OnMovement(InputAction.CallbackContext context)
     {
-        MovementKeysChanged?.Invoke(context.ReadValue<Vector2>());
+        if (context.performed)
+        {
+            MovementKeysChanged?.Invoke(context.ReadValue<Vector2>());
+        }
+        if(context.canceled)
+        {
+            MovementKeysChanged?.Invoke(context.ReadValue<Vector2>());
+        }
     }
 
 

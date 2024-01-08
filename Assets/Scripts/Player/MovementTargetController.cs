@@ -20,7 +20,7 @@ public class MovementTargetController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _target.transform.Translate(new Vector3(0, _joystickSpot.y)*Time.deltaTime * _moveSpeed, transform);
+        _target.transform.Translate(new Vector3(_joystickSpot.x, _joystickSpot.y)*Time.deltaTime * _moveSpeed, transform);
         //_target.transform.localPosition = new Vector3(_target.transform.localPosition.x, _joystickSpot.y);
     }
 
